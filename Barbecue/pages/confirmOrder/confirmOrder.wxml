@@ -1,0 +1,81 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class="meal-taking-method">
+	<view class="method-text">用餐方式</view>
+	<radio-group name="meal-taking-method" class="meal-taking-method-rg" bindchange="mealMethod">
+		<radio value="eat-in" checked>店内用餐</radio>
+		<radio value="take-away" style="margin-left: 25rpx;">外卖</radio>
+	</radio-group>
+</view>
+<view class="tablenumbers" hidden="{{hiddenTableNumbers}}">
+	<view class="tablenumbers-text">桌号</view>
+	<picker class="select-tablenumbers" mode="selector" range="{{tableNumbers}}" value="{{tableNumbersIndex}}" bindchange="bindTableNumbersChange">{{tableNumbers[tableNumbersIndex]}}</picker>
+</view>
+
+<view class="selected-address" hidden="{{hiddenAddress}}">
+	<view style=" padding-bottom: 15rpx; display: flex; justify-content: space-between;">
+		<view style="font-size: 38rpx; color: #454545; font-weight: 600;">收货信息</view>
+		<image class="update" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/修改.png" bindtap="updateAddress"></image>
+	</view>
+	<view style="font-size: 35rpx; padding-bottom: 10rpx;">{{user_info.address + user_info.houseNumber}}</view>
+	<view style="display: flex; padding-bottom: 10rpx;">
+		<view>{{user_info.name}}</view>
+		<view style="margin-left: 30rpx;">{{user_info.sex == '男' ? '先生' : '女士'}}</view>
+	</view>
+	<view>{{user_info.tel}}</view>
+	<view class="time-of-delivery">
+		<view class="time-text">送达时间(最快约30分钟后送达)：
+			<view>{{select_time}}</view>
+		</view>
+		<picker class="picker" mode="time" start="{{start_time}}" value="{{start_time}}" bindchange="selectTimeEvent">点击选择</picker>
+	</view>
+</view>
+
+<view class="order-meal">
+	<view class="cart" wx:for="{{cartList}}" wx:key="index">
+		<image class="meal-image" src="{{item.meal_pic}}" mode="aspectFill"></image>
+		<view class="meal-name">{{item.meal_name}}</view>
+		<view class="meal-price">x{{item.meal_purchase_quantity}}，￥{{item.meal_price * item.meal_purchase_quantity}}</view>
+	</view>
+	<view class="coupon">
+		<view class="coupon-text">优惠券</view>
+		<block wx:if="{{totalPrice < 200 || user_info.coupon == 0}}">
+			<view class="none-coupon">
+				<icon type="warn" size="20"></icon>
+				<view>暂无可使用优惠券</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="have-coupon">
+				<icon type="success" size="20"></icon>
+				<view>￥{{user_info.coupon}}优惠券</view>
+			</view>
+		</block>
+	</view>
+	<view class="order-sumMoney">
+		<view class="order-numbers">共{{totalNum}}件</view>
+		<block wx:if="{{totalPrice >= 200 && user_info.coupon > 0}}">
+			<view class="order-final-price">￥{{payPrice}}</view>
+			<view class="order-price">￥{{totalPrice}}</view>
+		</block>
+		<block wx:else>
+			<view class="order-final-price">￥{{payPrice}}</view>
+		</block>
+	</view>
+
+	<navigator class="continue" url="../category/category" open-type="switchTab">继续点单</navigator>
+</view>
+<view class="tableware">
+	<view class="tableware-text">餐具(筷子、勺、餐巾纸)</view>
+	<picker class="select-tableware" mode="selector" range="{{tablewareNumbers}}" value="{{tablewareNumbersIndex}}" bindchange="bindTablewareChange">{{tablewareNumbers[tablewareNumbersIndex]}}</picker>
+</view>
+
+<view class="input">
+	<view class="input-text">备注</view>
+	<textarea bindinput="getRemarks" placeholder="口味、偏好等要求" value="{{remarks}}" maxlength="72" style="height: 160rpx;"></textarea>
+</view>
+
+<view class="pay">
+	<view class="need-pay">还需支付</view>
+	<view class="pay-money">￥{{payPrice}}</view>
+	<view class="go-to-pay" bindtap="goToPay">去支付</view>
+</view>

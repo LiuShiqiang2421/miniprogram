@@ -1,0 +1,13 @@
+<!--pages/diningEvaluation/diningEvaluation.wxml-->
+<block wx:for="{{evaluation}}" wx:key="index" wx:for-item="item">
+	<view class="content">
+		<view class="avatar_name_time">
+			<image class="avatar" mode="aspectFill" src="{{item.e_order_avatar}}"></image>
+			<view class="name_time">
+				<view>{{item.e_order_name}}</view>
+				<view class="order_time">{{item.e_order_time}}</view>
+			</view>
+		</view>
+		<view class="e_content">{{item.e_content}}</view>
+	</view>
+</block>

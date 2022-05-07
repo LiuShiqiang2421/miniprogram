@@ -1,0 +1,306 @@
+page
+{
+	background: #f5f5f5;
+}
+.swiper-content
+{
+	width: 100%;
+}
+
+.swiper-item
+{
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-item image
+{
+	width: 100%;
+	height: 100%;
+}
+
+.functions
+{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20rpx;
+	width: 90%;
+	height: 300rpx;
+	/* background-color: #ff00ff; */
+	margin: 20rpx auto;	
+}
+
+.fun-box
+{
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 30rpx;
+	width: 320rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.fun-box image
+{
+	width: 150rpx;
+	height: 150rpx;
+	margin-top: 30rpx;
+	margin-left: 87rpx;
+
+}
+
+.order
+{
+	margin-top: 10rpx;
+	margin-bottom: 20rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.up
+{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 36rpx;
+}
+
+.down
+{
+	text-align: center;
+	font-size: 22rpx;
+	color: #cecece;
+}
+
+.right
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.take-out
+{
+	display: flex;
+	width: 320rpx;
+	background-color: #fff;
+	border-radius: 30rpx;
+	height: 140rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.take-out image
+{
+	width: 110rpx;
+	height: 110rpx;
+	margin-top: 15rpx;
+	margin-left: 15rpx;
+}
+
+.mall
+{
+	margin-top: 22rpx;
+	display: flex;
+	background-color: #fff;
+	width: 320rpx;
+	height: 140rpx;
+	border-radius: 30rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.mall image
+{
+	width: 110rpx;
+	height: 110rpx;
+	margin-top: 15rpx;
+	margin-left: 15rpx;
+}
+
+.order2
+{
+	margin-top: 35rpx;
+	margin-left: 15rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom-f
+{
+	margin: 0 10rpx;
+	display: flex;
+}
+
+.member-review
+{
+	background-color: #fff;
+	border-radius: 30rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+	margin: 0 10rpx;
+	display: flex;
+	width: 50%;
+	justify-content: space-evenly;
+}
+
+.left-text
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.right-image
+{
+	float: right;
+	width: 54rpx;
+	height: 54rpx;
+	margin: 65rpx 8rpx 8rpx 8rpx;
+}
+
+.right-image image
+{
+	width: 100%;
+	height: 100%;
+}
+
+.heavy
+{
+	font-weight: bolder;
+	font-size: 29rpx;
+}
+
+.light
+{
+	color: #cecece;
+	font-size: 25rpx;
+}
+
+.coupon
+{
+	margin: 30rpx auto;
+	height: 200rpx;
+	width: 95%;
+	background-color: #ffbb40;
+	display: flex;
+	border-radius: 10rpx;
+	box-shadow: 1rpx 2rpx 4rpx #000;
+}
+
+.coupon-left
+{
+	margin: 20rpx 25rpx;
+	border: 7rpx solid #fff;
+	width: 40rpx;
+}
+
+.coupon-left text
+{
+	writing-mode: vertical-lr;
+	color: #fff;
+	font-weight: 600;
+	word-spacing: -10rpx;
+}
+
+.coupon-center
+{
+	width: 510rpx;
+	height: 100%;
+	border-left: 6rpx solid #ed6f00;
+}
+
+.coupon-center-up
+{
+	display: flex;
+}
+
+.coupon-center-draw
+{
+	width: 45rpx;
+	height: 45rpx;
+	margin-top: 45rpx;
+	margin-left: 20rpx;
+	border: 7rpx solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	text-align: center;
+}
+
+.coupon-center-char
+{
+	color: #fff;
+	font-size: 80rpx;
+	font-weight: 550;
+	margin-top: 40rpx;
+}
+
+.coupon-center-money
+{
+	color: #fff;
+	font-size: 110rpx;
+	font-weight: 550;
+	margin-top: 10rpx;
+}
+
+.new-member-coupon
+{
+	margin-top: 45rpx;
+	margin-left: 20rpx;
+	text-align: center;
+}
+
+.new-member
+{
+	width: 150rpx;
+	background-color: #fff;
+	color: #ffbb40;
+	text-align: center;
+	font-weight: 700;
+	border-radius: 8rpx;
+	font-size: 25rpx;
+}
+
+.member-coupon
+{
+	color: #fff;
+	font-size: 46rpx;
+	font-weight: 550;
+	text-align: center;
+}
+
+.coupon-center-dowm
+{
+	color: #eaeaea;
+	line-height: 24rpx;
+	text-align: center;
+}
+
+.coupon-right
+{
+	width: 100rpx;
+	height: 100%;
+	background-color: #ed6f00;
+	border-top-right-radius: 10rpx;
+	border-bottom-right-radius: 10rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.coupon-right-click
+{
+	writing-mode: vertical-lr;
+	color: #f5f5f5;
+	letter-spacing: 8rpx;
+}
+
+.receive
+{
+	background-color: #ffbb40;
+	height: 80rpx;
+	width: 500rpx;
+	margin: 50rpx auto 200rpx;
+	border-radius: 35rpx;
+	color: #fff;
+	font-weight: 600;
+	font-size: 38rpx;
+	text-align: center;
+	line-height: 80rpx;
+	box-shadow: 1rpx 2rpx 4rpx #000;
+}

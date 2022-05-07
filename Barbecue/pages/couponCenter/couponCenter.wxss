@@ -1,0 +1,77 @@
+/* pages/couponCenter/couponCenter.wxss */
+.content {
+	background-color: #f5f5f5;
+}
+
+.points {
+	height: 400rpx;
+	background-color: #ffbb40;
+	color: #fff;
+}
+
+.points_up {
+	text-align: center;
+	font-size: 50rpx;
+	font-weight: 600;
+	padding: 20rpx;
+}
+
+.points_down {
+	display: flex;
+	justify-content: center;
+}
+
+.image {
+	height: 100rpx;
+	width: 100rpx;
+}
+
+.points_numbers {
+	line-height: 100rpx;
+	font-size: 40rpx;
+	margin-left: 20rpx;
+}
+
+.info {
+	margin: 0 20rpx 20rpx 20rpx;
+	color: #f0f0f0;
+	text-align: center;
+	font-size: 28rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.coupon {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20rpx 0;
+}
+
+.coupon_info {
+	background-color: #fff;
+	margin: 20rpx;
+	padding: 30rpx;
+	width: 275rpx;
+	height: 450rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 20rpx;
+	box-shadow: 1rpx 1rpx 20rpx #ddd;
+}
+
+.coupon_info image {
+	width: 200rpx;
+	height: 140rpx;
+}
+
+.coupon_money {
+	font-weight: 600;
+}
+
+.points_money {
+	color: #999;
+	font-size: 30rpx;
+}

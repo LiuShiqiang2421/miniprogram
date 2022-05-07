@@ -1,0 +1,101 @@
+<view class="notice">
+	<swiper class="swiper-notice" autoplay vertical easing-function="linear" duration="1000" circular interval="5000">
+		<swiper-item class="swiper-item">
+			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
+			<text>【周日特惠】消费满150元赠送精美凉菜一份</text>
+		</swiper-item>
+		<swiper-item class="swiper-item">
+			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
+			<text>新品推出：【麻辣小龙虾】，欢迎品尝</text>
+		</swiper-item>
+		<swiper-item class="swiper-item">
+			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
+			<text>20余种烧烤种类，满足你的味蕾</text>
+		</swiper-item>
+	</swiper>
+</view>
+
+<view class="scroll-view-container">
+	<!-- 左侧滑动区域 -->
+	<scroll-view class="left-scroll-view" enhanced="{{true}}" show-scrollbar="{{false}}" scroll-y style="height: {{windowHeight * 2}}rpx;">
+		<block wx:for="{{cateList}}" wx:key="index">
+			<view class="left-scroll-view-item {{index === active ? 'active' : ''}}" bindtap="activeChanged" data-index="{{index}}">
+				<image src="{{item.cate_pic}}"></image>
+				<view class="cate_name {{item.cate_pic != null ? 'cate_name_pic' : ''}}">{{item.cate_name}}</view>
+			</view>
+		</block>
+		<view style="height: 150rpx;"></view>
+	</scroll-view>
+
+	<!-- 右侧滑动区域 -->
+	<scroll-view class="right-scroll-view" scroll-top="{{scrollTop}}" scroll-y style="height: {{windowHeight * 2}}rpx;" enhanced="{{true}}" binddragging="hiddencartinfo">
+		<view class="meal-category">{{mealCategory}}</view>
+		<block wx:for="{{mealList}}" wx:key="index">
+			<view class="right-scroll-view-item" bindtap="showModal" data-index="{{item.meal_id}}">
+				<image class="meal-pic" mode="aspectFill" src="{{item.meal_pic}}"></image>
+				<view class="meal-name-info-price">
+					<view class="meal-name">{{item.meal_name}}</view>
+					<view class="meal-info">{{item.meal_info}}</view>
+					<view class="meal-price-add-to-cart">
+						<view class="meal-price">￥{{item.meal_price}}</view>
+						<image class="subtract-to-cart" hidden="{{item.meal_purchase_quantity <= 0}}" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/减号.png"></image>
+						<view class="subtract-status" hover-class="hover-status" hidden="{{item.meal_purchase_quantity <= 0}}" catchtap="substractshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
+
+						<view class="mealcount" hidden="{{item.meal_purchase_quantity <= 0}}" data-meal_id="{{item.meal_id}}" data-meal_purchase_quantity="{{item.meal_purchase_quantity}}">{{item.meal_purchase_quantity}}</view>
+						<image class="add-to-cart" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/加号.png">
+						</image>
+						<view class="add-status" hover-class="hover-status" catchtap="addshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
+					</view>
+				</view>
+			</view>
+		</block>
+
+		<view style="height: 150rpx;"></view>
+
+		<view class="count" hidden="{{hiddencartimg}}">{{totalNum}}</view>
+		<view class="shoppingcart" id="shoppingcart">
+			<image class="shoppingcart-img" catchtap="showcartinfo" hidden="{{hiddencartimg}}" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/购物车.png"></image>
+		</view>
+		
+		<view class="shoppingcart-info" catchtap="cascadeToggle" animation="{{ejectAnimation}}">
+			<image class="shoppingcart-img" style="margin: 5rpx 0 5rpx 20rpx;" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/购物车.png"></image>
+			<view class="all_money">总计：{{totalPrice}}元，{{totalNum}}件</view>
+			<view class="settlement" catchtap="gotoOrder" data-totalprice="{{totalPrice}}">{{totalPrice == 0 ? '不可结算' : totalPrice < 15 ? '￥15起送' : '去结算' }}</view>
+			</view>
+	</scroll-view>
+</view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" hidden="{{!showModal}}"></view>
+<view class="modal" hidden="{{!showModal}}" catchtouchmove="preventTouchMove">
+	<view class="modal-dialog">
+		<view class="modal-meal-name">{{modalMealName}}</view>
+		<image class="modal-meal-pic" mode="aspectFill" src="{{modalMealPic}}"></image>
+		<view class="modal-meal-info">{{modalMealInfo}}</view>
+		<view class="modal-meal-price">￥{{modalMealPrice}}</view>
+	</view>
+	<icon class="modal-cancel" type="clear" size="30" bindtap="hideModal"></icon>
+</view>
+
+<!--购物车弹窗  -->
+<view hidden="{{maskFlag}}" class="modal-mask" catchtouchmove="preventTouchMove" bindtap="cascadeToggle"></view>
+<view animation="{{animationData}}" class="cart_popup">
+	<view class="shopcart_title"><span class="shopcart_close" bindtap="cascadeToggle">返回</span>购物车<span class="shopcart_deleteAll" bindtap="cleanList">清空</span></view>
+	<scroll-view scroll-y style="height:250px;margin-top:35px">
+		<block wx:for="{{cartList}}" wx:key="index">
+			<view class="cart_cells" wx:if="{{item.meal_purchase_quantity > 0}}">
+				<view class="cells_name" data-index="{{index}}">{{item.meal_name}}</view>
+				<view class="cells_price" data-index="{{index}}">￥{{item.meal_price}}</view>
+				<view class="price-box">
+					<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/减号.png" class="cartSub" hidden="{{item.meal_purchase_quantity<=0}}"></image>
+					<view class="cart-subtract-status" hover-class="hover-status" hidden="{{item.meal_purchase_quantity<=0}}" bindtap="substractshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
+
+					<view class="value" style="color:#ff9600; margin-top:8rpx" hidden="{{item.meal_purchase_quantity<=0}}" data-meal_id="{{item.meal_id}}">{{item.meal_purchase_quantity}}</view>
+
+					<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/加号.png" class="cartAdd"></image>
+					<view class="cart-add-status" hover-class="hover-status" bindtap="addshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
+				</view>
+				<icon class="shopcart_delete" type="clear" size="23" data-index="{{index}}" data-meal_id="{{item.meal_id}}" bindtap="deleteOne" />
+			</view>
+		</block>
+	</scroll-view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<form bindsubmit="submitEvent">
+	<view class="info">
+		<view class="info-item">电话</view>
+		<input type="number" name="tel" value="{{tel}}" placeholder="请输入电话号码" />
+	</view>
+	<view class="info">
+		<view class="info-item">密码</view>
+		<input type="text" name="password" password placeholder="请输入密码" />
+	</view>
+	<button form-type="submit" class="save">点击登录</button>
+</form>

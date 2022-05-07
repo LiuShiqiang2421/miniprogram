@@ -1,0 +1,36 @@
+<block wx:if="{{order}}">
+	<view class="order-meal" wx:for="{{order}}" wx:for-item="order_item" wx:key="index">
+		<form bindsubmit="bindFormSubmit">
+			<view class="order_id">
+				<view>订单编号</view>
+				<input name="order_id" disabled value="{{order_item.order_id}}" />
+			</view>
+			<view class="order_time">
+				<view>订单时间</view>
+				<input name="order_time" disabled value="{{order_item.order_time}}" />
+			</view>
+			<view class="cart">
+				<view class="cart_item" wx:for="{{order_item.order_catelist}}" wx:for-item="catelist_item" wx:key="index">
+					<view>{{catelist_item.meal_name}}</view>
+					<view class="meal_quantity">x{{catelist_item.meal_purchase_quantity}}</view>
+					<view class="meal_price">￥{{catelist_item.meal_price}}</view>
+				</view>
+			</view>
+			<view class="price">
+				<view class="coupon" wx:if="{{order_item.order_coupon > 0}}">优惠券 -￥{{order_item.order_coupon}}</view>
+				<view>实付款 ￥{{order_item.order_pay_price}}</view>
+			</view>
+
+			<view class="evaluation">
+				<view class="evaluation-text">
+					<view class="my_evaluation">我的评价</view>
+					<button type="default" size="mini" hidden="{{order_item.e_content != null}}" form-type="submit" style="height: 70rpx; margin-right: 130rpx; color: #e35049;">点击发布</button>
+				</view>
+				<textarea class="textarea" placeholder="记得好评~" disabled="{{order_item.e_content != null}}" value="{{order_item.e_content}}" maxlength="72" name="content"></textarea>
+			</view>
+		</form>
+	</view>
+</block>
+<block wx:else>
+	<view style="text-align: center; margin-top: 100rpx;">暂无订单 :(</view>
+</block>

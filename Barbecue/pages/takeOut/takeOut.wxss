@@ -1,0 +1,62 @@
+/* pages/takeOut/takeOut.wxss */
+page {
+	background: #f5f5f5;
+}
+
+.address {
+	margin: 20rpx auto;
+	width: 95%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10rpx;
+	box-shadow: 1rpx 1rpx 10rpx #ddd;
+}
+
+.my-address-cells {
+	border-bottom: 1px #dedede solid;
+	display: flex;
+	position: relative;
+}
+
+.my-address-cells-left {
+	width: 85%;
+	padding: 20rpx 0 20rpx 20rpx;
+	font-size: 30rpx;
+}
+
+.name-sex {
+	display: flex;
+	margin: 10rpx auto;
+}
+
+.user-info {
+	color: #aaa;
+}
+
+.my-address-cells-right {
+	width: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.update {
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.update-status{
+	width: 15%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	position: absolute;
+}
+
+.hover-status {
+	background: #000;
+	opacity: 0.3;
+}

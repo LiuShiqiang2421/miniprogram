@@ -1,0 +1,21 @@
+<!--pages/takeOut/takeOut.wxml-->
+<block wx:if="{{user_info.tel}}">
+	<view class="address">
+		<view class="my-address-cells">
+			<view class="my-address-cells-left">
+				<view>{{user_info.address + user_info.houseNumber}}</view>
+				<view class="name-sex">
+					<view class="user-info">{{user_info.name}}</view>
+					<view class="user-info" style="margin-left: 30rpx;">{{user_info.sex == '男' ? '先生' : '女士'}}</view>
+				</view>
+				<view class="user-info">{{user_info.tel}}</view>
+			</view>
+			<view class="my-address-cells-right">
+				<image class="update" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/修改.png"></image>
+				<view class="update-status" hover-class="hover-status" bindtap="updateAddress"></view>
+			</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+</block>

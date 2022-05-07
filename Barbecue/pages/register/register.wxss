@@ -1,0 +1,30 @@
+.info {
+	display: flex;
+	margin: 39rpx;
+}
+
+.info-item {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	width: 110rpx;
+	text-align: center;
+}
+
+.info input {
+	line-height: 40rpx;
+	font-size: 28rpx;
+	margin-left: 30rpx;
+	border-bottom: 1rpx solid #efefef;
+	width: 450rpx;
+}
+.save 
+{
+	width: 1100rpx;
+	background-color: #ffbb40;
+	color: #f5f5f5;
+	line-height: 40rpx;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 40rpx;
+	font-size: 30rpx;
+}

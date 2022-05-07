@@ -1,0 +1,291 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+page {
+	background-color: #f5f5f5;
+}
+
+.meal-taking-method {
+	background-color: #fff;
+	margin: 25rpx;
+	border-radius: 20rpx;
+	height: 120rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.method-text {
+	margin-left: 25rpx;
+}
+
+.meal-taking-method-rg {
+	margin-right: 25rpx;
+}
+
+.tablenumbers {
+	background-color: #fff;
+	margin: 25rpx;
+	border-radius: 20rpx;
+	height: 120rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.tablenumbers-text {
+	margin-left: 25rpx;
+}
+
+.select-tablenumbers {
+	margin-right: 25rpx;
+	height: 100%;
+	line-height: 120rpx;
+	width: 300rpx;
+	text-align: right;
+}
+
+.coupon-price {
+	padding: 20rpx;
+	margin: 20rpx;
+}
+
+.selected-address {
+	background-color: #fff;
+	border-radius: 20rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+	margin: 25rpx;
+	padding: 25rpx;
+}
+
+.update {
+	width: 50rpx;
+	height: 50rpx;
+} 
+
+.select-address {
+	margin: 20rpx auto;
+	width: 95%;
+	height: 100rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+	display: flex;
+}
+
+.add-address {
+	width: 48rpx;
+	height: 48rpx;
+	margin: 26rpx;
+}
+
+.none {
+	width: 100%;
+}
+
+.text {
+	line-height: 98rpx;
+}
+
+.right-arrow {
+	width: 28rpx;
+	height: 28rpx;
+	margin: 36rpx 30rpx 36rpx 368rpx;
+}
+
+.time-of-delivery {
+	height: 120rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.time-text {
+	height: 95rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.picker {
+	padding: 10rpx;
+	border: 1rpx solid #999999;
+	border-radius: 20rpx;
+	color: #999;
+	font-size: 26rpx;
+	line-height: 36rpx;
+}
+
+.order-meal {
+	background-color: #fff;
+	margin: 25rpx;
+	padding-top: 15rpx;
+	padding-bottom: 250rpx;
+	border-radius: 20rpx;
+	position: relative;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.cart {
+	display: flex;
+	align-items: center;
+	padding: 15rpx 0 15rpx 25rpx;
+	background-color: #fff;
+	position: relative;
+}
+
+.meal-image {
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 20rpx;
+}
+
+.meal-name {
+	position: absolute;
+	left: 200rpx;
+}
+
+.meal-price {
+	position: absolute;
+	left: 510rpx;
+	color: #999;
+}
+
+.coupon {
+	position: absolute;
+	padding: 15rpx 0 15rpx 25rpx;
+	width: 100%;
+	display: flex;
+}
+
+.coupon-text {
+	line-height: 65rpx;
+}
+
+.none-coupon {
+	position: absolute;
+	right: 50rpx;
+	padding: 10rpx;
+	background-color: #ffeee7;
+	color: #e35049;
+	border-radius: 20rpx;
+	font-size: 26rpx;
+	display: flex;
+	align-items: center;
+}
+
+.have-coupon {
+	position: absolute;
+	right: 50rpx;
+	padding: 10rpx;
+	color: #999;
+	border: 1rpx solid #999;
+	border-radius: 10rpx;
+	font-size: 26rpx;
+	display: flex;
+	align-items: center;
+}
+
+.order-sumMoney {
+	display: flex;
+	position: absolute;
+	right: 20rpx;
+	bottom: 70rpx;
+}
+
+.order-numbers {
+	color: #999;
+	font-size: 28rpx;
+	line-height: 80rpx;
+	padding: 10rpx;
+}
+
+.order-final-price {
+	color: #e35049;
+	font-size: 60rpx;
+	font-weight: 700;
+}
+
+.order-price {
+	text-decoration: line-through;
+	line-height: 80rpx;
+	color: #999;
+	font-size: 28rpx;
+	padding: 10rpx;
+}
+
+.continue {
+	position: absolute;
+	right: 20rpx;
+	bottom: 20rpx;
+	color: #e35049;
+	border: 1rpx #e35049 solid;
+	padding: 10rpx;
+	border-radius: 20rpx;
+}
+
+.tableware {
+	background-color: #fff;
+	margin: 25rpx;
+	border-radius: 20rpx;
+	height: 120rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.tableware-text {
+	margin-left: 25rpx;
+}
+
+.select-tableware {
+	margin-right: 25rpx;
+	height: 100%;
+	line-height: 120rpx;
+	width: 300rpx;
+	text-align: right;
+}
+
+.input {
+	background-color: #fff;
+	margin: 25rpx;
+	padding: 25rpx;
+	border-radius: 20rpx;
+	height: 225rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.input-text {
+	margin-bottom: 25rpx;
+}
+
+.pay {
+	background-color: #fff;
+	margin: 25rpx;
+	height: 120rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 20rpx;
+}
+
+.need-pay {
+	margin-left: 25rpx;
+}
+
+.pay-money {
+	font-size: 55rpx;
+}
+
+.go-to-pay {
+	width: 250rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #e35049;
+	border-radius: 50rpx;
+	margin-right: 25rpx;
+	color: #f5f5f5;
+}

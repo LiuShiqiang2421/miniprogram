@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view class="color"></view>
+<view class="content">
+	<view class="content-top">
+		<view class="nickname-image">
+			<view class="nickname">{{user_info.name == '' ? '用户名' : user_info.name}}</view>
+			<image src="{{user_info.avatar == '' ? 'https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/avatar.png' : user_info.avatar}}"></image>
+		</view>
+		<view class="user-info">
+			<view class="info-detail">
+				<view>积分</view>
+				<view class="detail-value">{{user_info.points == '' ? '0.00' : user_info.points}}</view>
+			</view>
+			<view class="info-detail">
+				<view>优惠券</view>
+				<view class="detail-value">{{user_info.coupon == '' ? '0.00' : user_info.coupon}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="content-bottom">
+		<view class="func" bindtap="couponCenter">
+			<view class="func-info">
+				<image class="func-info-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/领券中心.png"></image>
+				<view>领券中心</view>
+			</view>
+			<image class="right-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/向右箭头.png"></image>
+		</view>
+		<view class="func" bindtap="myAddress">
+			<view class="func-info">
+				<image class="func-info-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/收货地址.png"></image>
+				<view>我的收货地址</view>
+			</view>
+			<image class="right-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/向右箭头.png"></image>
+		</view>
+	</view>
+
+	<block wx:if="{{user_info.tel}}">
+		<button style="width: 676rpx; margin-top: 30rpx; color: #f00; box-shadow: 1rpx 1rpx 15rpx #ddd;" hover-class="hoverLogout" bindtap="logout">退出登录</button>
+	</block>
+	<block wx:else>
+		<button style="width: 676rpx; margin-top: 30rpx; color: #ffbb40; box-shadow: 1rpx 1rpx 15rpx #ddd;" bindtap="register">没有账号，立即注册</button>
+		<button style="width: 676rpx; margin-top: 30rpx; color: #ffbb40; box-shadow: 1rpx 1rpx 15rpx #ddd;" bindtap="login">已有账号，点击登录</button>
+	</block>
+</view>

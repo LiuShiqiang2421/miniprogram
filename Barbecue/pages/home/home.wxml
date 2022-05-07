@@ -1,0 +1,81 @@
+<swiper class="swiper-content" autoplay easing-function="linear" duration="1000" circular indicator-dots interval="5000" indicator-active-color="#333333" style="height: {{height * 2}}rpx; width: {{width * 2}}rpx;">
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-1.png"></image>
+	</swiper-item>
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-2.png"></image>
+	</swiper-item>
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-3.jpeg"></image>
+	</swiper-item>
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-4.jpeg"></image>
+	</swiper-item>
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-5.jpeg"></image>
+	</swiper-item>
+	<swiper-item class="swiper-item">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/home-6.jpg"></image>
+	</swiper-item>
+</swiper>
+
+<view class="functions">
+	<view class="fun-box" bindtap="order">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/店内点餐.png"></image>
+		<view class="order">
+			<text class="up">店内点餐</text>
+			<text class="down">店内就餐/打包</text>
+		</view>
+	</view>
+	<view class="fun-box" bindtap="takeOut">
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/外卖.png"></image>
+		<view class="order">
+			<text class="up">外卖到家</text>
+			<text class="down">免费无接触配送</text>
+		</view>
+	</view>
+</view>
+
+<view class="bottom-f">
+	<view class="member-review" bindtap="membershipInterests">
+		<view class="left-text">
+			<text class="heavy">会员权益</text>
+			<text class="light">马上了解></text>
+		</view>
+		<view class="right-image">
+			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/会员.png"></image>
+		</view>
+	</view>
+	<view class="member-review" bindtap="review">
+		<view class="left-text">
+			<text class="heavy">就餐评价</text>
+			<text class="light">马上评价></text>
+		</view>
+		<view class="right-image">
+			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/评价.png"></image>
+		</view>
+	</view>
+</view>
+
+<view class="coupon" bindtap="receive" hidden="{{isHidden}}">
+	<view class="coupon-left">
+		<text>COUPON</text>
+	</view>
+	<view class="coupon-center">
+		<view class="coupon-center-up">
+			<view class="coupon-center-draw">领</view>
+			<text class="coupon-center-char">￥</text>
+			<text class="coupon-center-money">50</text>
+			<view class="new-member-coupon">
+				<view class="new-member">新注册会员</view>
+				<text class="member-coupon">福利券</text>
+			</view>
+		</view>
+		<view class="coupon-center-dowm">（支付金额大于￥200可用）</view>
+	</view>
+	<view class="coupon-right">
+		<view class="coupon-right-click">点击领取</view>
+	</view>
+</view>
+
+<view class="receive" bindtap="receive" hidden="{{isHidden}}">立即领取</view>

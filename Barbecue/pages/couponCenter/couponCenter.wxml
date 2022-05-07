@@ -1,0 +1,24 @@
+<!--pages/couponCenter/couponCenter.wxml-->
+<view class="content">
+	<view class="points">
+		<view class="points_up">我的积分</view>
+		<view class="points_down">
+			<image class="image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/积分.png"></image>
+			<view class="points_numbers">{{user_info.points}}</view>
+		</view>
+		<view style="font-size: 28rpx; margin: 20rpx; color: #f0f0f0; text-align: center;">每次消费金额的10%会存入您的积分中，您可以凭借积分兑换优惠券~</view>
+		<view class="info">
+			<icon type="warn" size="24"></icon><view style="margin-left: 20rpx;">支付金额大于￥200才可使用优惠券哦~</view>
+		</view>
+
+	</view>
+	<view class="coupon">
+		<block wx:for="{{coupon}}" wx:key="index" wx:for-item="item">
+			<view class="coupon_info" bindtap="couponEvent" data-c_money="{{item.c_money}}" data-c_points="{{item.c_points}}">
+				<image src="{{item.c_img}}"></image>
+				<view class="coupon_money">{{item.c_money}}元优惠券</view>
+				<view class="points_money">{{item.c_points}}积分</view>
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,42 @@
+<form bindsubmit="submitEvent">
+	<view class="info">
+		<view class="info-item">姓名</view>
+		<input type="text" name="name" placeholder="请输入姓名" />
+	</view>
+
+	<view class="info">
+		<view class="info-item" style="margin-top: 15rpx;">性别</view>
+		<radio-group name="sex" style="margin: 10rpx 0 0 30rpx;">
+			<radio value="男" checked>男</radio>
+			<radio value="女" style="margin-left: 20rpx;">女</radio>
+		</radio-group>
+	</view>
+
+	<view class="info">
+		<view class="info-item">联系电话</view>
+		<input type="number" name="tel" placeholder="请输入电话" />
+	</view>
+
+	<view class="info">
+		<view class="info-item">登录密码</view>
+		<input type="text" name="password" password placeholder="请输入密码" />
+	</view>
+	<view class="info">
+		<view class="info-item">确认密码</view>
+		<input type="text" name="confirmPassword" password placeholder="请再次输入密码" />
+	</view>
+
+	<view class="info">
+		<view class="info-item">收货地址</view>
+		<input type="text" name="address" placeholder="请选择地址" disabled value="{{address}}"/>
+		<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/定位.png" style="height: 32rpx; width: 32rpx; margin-top: 6rpx;"></image>
+		<view style="font-size: 28rpx; line-height: 40rpx; border-left: 1rpx solid #efefef;" bindtap='chooseLocation'>定位</view>
+	</view>
+
+	<view class="info">
+		<view class="info-item">门牌号</view>
+		<input type="text" name="houseNumber" placeholder="请输入详细门牌号" />
+	</view>
+
+	<button form-type="submit" class="save">注册</button>
+</form>

@@ -1,0 +1,88 @@
+page {
+	background-color: #f5f5f5;
+}
+
+.order-meal {
+	background-color: #fff;
+	margin: 30rpx;
+	padding: 25rpx;
+	border-radius: 20rpx;
+	box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+.order_id {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 10rpx;
+	text-align: right;
+}
+.order_time{
+	display: flex;
+	justify-content: space-between;
+	padding: 10rpx 0;
+	margin: 10rpx 0;
+	text-align: right;
+	border-bottom: 1rpx #999 dashed;
+}
+.cart {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+}
+
+.cart_item {
+	position: relative;
+	display: flex;
+	width: 100%;
+	padding: 10rpx 0;
+}
+
+.meal_quantity {
+	position: absolute;
+	right: 200rpx;
+}
+
+.meal_price {
+	position: absolute;
+	right: 0;
+}
+
+.quantity_price {
+	position: relative;
+	bottom: 120rpx;
+}
+
+.price {
+	display: flex;
+	justify-content: flex-end;
+	padding: 10rpx 0;
+	margin: 10rpx 0;
+	border-top: 1rpx #999 dashed;
+	border-bottom: 1rpx #999 dashed;
+}
+
+.coupon {
+	color: #e35049;
+	margin-right: 20rpx;
+}
+
+.evaluation {
+	margin: 20rpx 0;
+}
+
+.evaluation-text {
+	display: flex;
+	width: 120%;
+}
+
+.my_evaluation {
+	padding: 20rpx 0;
+}
+
+.textarea {
+	height: 160rpx;
+	border: 1rpx solid #999;
+	padding: 20rpx;
+	border-radius: 20rpx;
+}

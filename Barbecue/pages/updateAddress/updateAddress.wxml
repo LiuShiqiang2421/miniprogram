@@ -1,0 +1,32 @@
+<!--pages/updateAddress/updateAddress.wxml-->
+<form bindsubmit="submitEvent">
+	<view class="info">
+		<view class="info-item">姓名</view>
+		<input type="text" name="name" placeholder="请输入姓名" value="{{user_info.name}}"/>
+	</view>
+
+	<view class="info">
+		<view class="info-item" style="margin-top: 15rpx;">性别</view>
+		<radio-group name="sex" style="margin: 10rpx 0 0 30rpx;">
+			<radio value="男" checked="{{user_info.sex == '男' ? true : false}}">男</radio>
+			<radio value="女" checked="{{user_info.sex == '女' ? true : false}}" style="margin-left: 20rpx;">女</radio>
+		</radio-group>
+	</view>
+
+	<view class="info">
+		<view class="info-item">联系电话</view>
+		<input type="number" name="tel" disabled value="{{user_info.tel}}" />
+	</view>
+
+	<view class="info">
+		<view class="info-item">收货地址</view>
+		<input type="text" name="address" placeholder="请输入收货地址" value="{{user_info.address}}"/>
+	</view>
+
+	<view class="info">
+		<view class="info-item">门牌号</view>
+		<input type="text" name="houseNumber" placeholder="请输入详细门牌号" value="{{user_info.houseNumber}}" />
+	</view>
+
+	<button form-type="submit" class="save">确定</button>
+</form>

@@ -1,0 +1,2 @@
+/* pages/updateAddress/updateAddress.wxss */
+@import '/pages/register/register.wxss';
