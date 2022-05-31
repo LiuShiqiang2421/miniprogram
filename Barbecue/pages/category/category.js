@@ -27,7 +27,6 @@ Page({
 		maskFlag: true,
 	},
 
-	// 左侧菜单的点击事件
 	activeChanged: function (e) {
 		var currentIndex = e.currentTarget.dataset.index;
 		var newMealList = [];
@@ -55,14 +54,14 @@ Page({
 
 	// 显示模态框
 	showModal: function (e) {
-		var index = e.currentTarget.dataset.index - 1;
+		var index = e.currentTarget.dataset.index;
 		var allMeal = this.data.allMeal;
 
 		this.setData({
-			modalMealName: allMeal[index].meal_name,
-			modalMealPic: allMeal[index].meal_pic,
-			modalMealInfo: allMeal[index].meal_info,
-			modalMealPrice: allMeal[index].meal_price,
+			modalMealName: allMeal[index - 1].meal_name,
+			modalMealPic: allMeal[index - 1].meal_pic,
+			modalMealInfo: allMeal[index - 1].meal_info,
+			modalMealPrice: allMeal[index - 1].meal_price,
 			showModal: true
 		})
 	},
@@ -181,8 +180,11 @@ Page({
 									totalNum: 0,
 									totalPrice: 0,
 								})
-								this.cascadeDismiss()
+								if (this.data.maskVisual == 'show') {
+									this.cascadeDismiss()
+								}
 							}
+
 							try {
 								wx.setStorageSync('cart', arr)
 							} catch (e) {
@@ -280,7 +282,7 @@ Page({
 			} else {
 				that.cascadeDismiss()
 			}
-		} 
+		}
 	},
 
 	// 打开购物车方法
@@ -412,7 +414,6 @@ Page({
 						totalNum += Number(arr[i].meal_purchase_quantity);
 					}
 				}
-
 				that.setData({
 					hasList: true,
 					cartList: arr,
@@ -458,7 +459,37 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh() {
-
+		wx.request({
+			url: apiurl + 'category',
+			success: (res) => {
+				this.setData({
+					cateList: res.data,
+				});
+			},
+		});
+		wx.request({
+			url: apiurl + 'meal',
+			success: (res) => {
+				this.data.allMeal = res.data;
+				var newMealList = [];
+				if (this.data.active == 0) {
+					this.setData({
+						mealList: this.data.allMeal,
+					})
+				} else {
+					for (var i in this.data.allMeal) {
+						if (this.data.allMeal[i].meal_category == this.data.active + 1) {
+							newMealList.push(this.data.allMeal[i])
+						}
+					}
+					this.setData({
+						scrollTop: 0,
+						mealList: newMealList,
+						mealCategory: this.data.cateList[this.data.active].cate_name,
+					})
+				}
+			},
+		});
 	},
 
 	/**

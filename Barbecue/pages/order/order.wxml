@@ -17,7 +17,6 @@
 				</view>
 			</view>
 			<view class="price">
-				<view class="coupon" wx:if="{{order_item.order_coupon > 0}}">优惠券 -￥{{order_item.order_coupon}}</view>
 				<view>实付款 ￥{{order_item.order_pay_price}}</view>
 			</view>
 

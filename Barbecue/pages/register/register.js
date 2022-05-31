@@ -99,7 +99,7 @@ Page({
 								user_info.sex = sex;
 								user_info.tel = tel;
 								user_info.password = password;
-								user_info.avatar = sex == '男' ? 'https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/男.png' : 'https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/女.png';
+								user_info.avatar = sex == '男' ? 'http://localhost/barbecue/public/libs/img/男.png' : 'http://localhost/barbecue/public/libs/img/女.png';
 								user_info.address = address;
 								user_info.houseNumber = houseNumber;
 								wx.showToast({

@@ -1,21 +1,21 @@
 .info {
 	display: flex;
-	margin: 39rpx;
+	margin: 40rpx;
 }
 
 .info-item {
 	font-size: 28rpx;
 	line-height: 40rpx;
-	width: 110rpx;
+	width: 120rpx;
 	text-align: center;
 }
 
 .info input {
 	line-height: 40rpx;
 	font-size: 28rpx;
-	margin-left: 30rpx;
+	margin-left: 25rpx;
 	border-bottom: 1rpx solid #efefef;
-	width: 450rpx;
+	width: 437rpx;
 }
 .save 
 {

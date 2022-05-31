@@ -1,15 +1,15 @@
 <view class="notice">
 	<swiper class="swiper-notice" autoplay vertical easing-function="linear" duration="1000" circular interval="5000">
 		<swiper-item class="swiper-item">
-			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
-			<text>【周日特惠】消费满150元赠送精美凉菜一份</text>
+			<image src="http://localhost/barbecue/public/libs/img/公告.png"></image>
+			<text>【周末特惠】店内消费满200元赠送精美凉菜一份</text>
 		</swiper-item>
 		<swiper-item class="swiper-item">
-			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
+			<image src="http://localhost/barbecue/public/libs/img/公告.png"></image>
 			<text>新品推出：【麻辣小龙虾】，欢迎品尝</text>
 		</swiper-item>
 		<swiper-item class="swiper-item">
-			<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/公告.png"></image>
+			<image src="http://localhost/barbecue/public/libs/img/公告.png"></image>
 			<text>20余种烧烤种类，满足你的味蕾</text>
 		</swiper-item>
 	</swiper>
@@ -38,11 +38,11 @@
 					<view class="meal-info">{{item.meal_info}}</view>
 					<view class="meal-price-add-to-cart">
 						<view class="meal-price">￥{{item.meal_price}}</view>
-						<image class="subtract-to-cart" hidden="{{item.meal_purchase_quantity <= 0}}" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/减号.png"></image>
+						<image class="subtract-to-cart" hidden="{{item.meal_purchase_quantity <= 0}}" src="http://localhost/barbecue/public/libs/img/减号.png"></image>
 						<view class="subtract-status" hover-class="hover-status" hidden="{{item.meal_purchase_quantity <= 0}}" catchtap="substractshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
 
 						<view class="mealcount" hidden="{{item.meal_purchase_quantity <= 0}}" data-meal_id="{{item.meal_id}}" data-meal_purchase_quantity="{{item.meal_purchase_quantity}}">{{item.meal_purchase_quantity}}</view>
-						<image class="add-to-cart" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/加号.png">
+						<image class="add-to-cart" src="http://localhost/barbecue/public/libs/img/加号.png">
 						</image>
 						<view class="add-status" hover-class="hover-status" catchtap="addshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
 					</view>
@@ -54,11 +54,11 @@
 
 		<view class="count" hidden="{{hiddencartimg}}">{{totalNum}}</view>
 		<view class="shoppingcart" id="shoppingcart">
-			<image class="shoppingcart-img" catchtap="showcartinfo" hidden="{{hiddencartimg}}" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/购物车.png"></image>
+			<image class="shoppingcart-img" catchtap="showcartinfo" hidden="{{hiddencartimg}}" src="http://localhost/barbecue/public/libs/img/购物车.png"></image>
 		</view>
 		
 		<view class="shoppingcart-info" catchtap="cascadeToggle" animation="{{ejectAnimation}}">
-			<image class="shoppingcart-img" style="margin: 5rpx 0 5rpx 20rpx;" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/购物车.png"></image>
+			<image class="shoppingcart-img" style="margin: 5rpx 0 5rpx 20rpx;" src="http://localhost/barbecue/public/libs/img/购物车.png"></image>
 			<view class="all_money">总计：{{totalPrice}}元，{{totalNum}}件</view>
 			<view class="settlement" catchtap="gotoOrder" data-totalprice="{{totalPrice}}">{{totalPrice == 0 ? '不可结算' : totalPrice < 15 ? '￥15起送' : '去结算' }}</view>
 			</view>
@@ -86,12 +86,12 @@
 				<view class="cells_name" data-index="{{index}}">{{item.meal_name}}</view>
 				<view class="cells_price" data-index="{{index}}">￥{{item.meal_price}}</view>
 				<view class="price-box">
-					<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/减号.png" class="cartSub" hidden="{{item.meal_purchase_quantity<=0}}"></image>
+					<image src="http://localhost/barbecue/public/libs/img/减号.png" class="cartSub" hidden="{{item.meal_purchase_quantity<=0}}"></image>
 					<view class="cart-subtract-status" hover-class="hover-status" hidden="{{item.meal_purchase_quantity<=0}}" bindtap="substractshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
 
 					<view class="value" style="color:#ff9600; margin-top:8rpx" hidden="{{item.meal_purchase_quantity<=0}}" data-meal_id="{{item.meal_id}}">{{item.meal_purchase_quantity}}</view>
 
-					<image src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/加号.png" class="cartAdd"></image>
+					<image src="http://localhost/barbecue/public/libs/img/加号.png" class="cartAdd"></image>
 					<view class="cart-add-status" hover-class="hover-status" bindtap="addshoppingcart" data-meal_id="{{item.meal_id}}" data-index="{{index}}"></view>
 				</view>
 				<icon class="shopcart_delete" type="clear" size="23" data-index="{{index}}" data-meal_id="{{item.meal_id}}" bindtap="deleteOne" />

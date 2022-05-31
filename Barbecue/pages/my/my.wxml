@@ -4,7 +4,7 @@
 	<view class="content-top">
 		<view class="nickname-image">
 			<view class="nickname">{{user_info.name == '' ? '用户名' : user_info.name}}</view>
-			<image src="{{user_info.avatar == '' ? 'https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/avatar.png' : user_info.avatar}}"></image>
+			<image src="{{user_info.avatar == '' ? 'http://localhost/barbecue/public/libs/img/avatar.png' : user_info.avatar}}"></image>
 		</view>
 		<view class="user-info">
 			<view class="info-detail">
@@ -20,17 +20,17 @@
 	<view class="content-bottom">
 		<view class="func" bindtap="couponCenter">
 			<view class="func-info">
-				<image class="func-info-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/领券中心.png"></image>
+				<image class="func-info-image" src="http://localhost/barbecue/public/libs/img/领券中心.png"></image>
 				<view>领券中心</view>
 			</view>
-			<image class="right-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/向右箭头.png"></image>
+			<image class="right-image" src="http://localhost/barbecue/public/libs/img/向右箭头.png"></image>
 		</view>
 		<view class="func" bindtap="myAddress">
 			<view class="func-info">
-				<image class="func-info-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/收货地址.png"></image>
+				<image class="func-info-image" src="http://localhost/barbecue/public/libs/img/收货地址.png"></image>
 				<view>我的收货地址</view>
 			</view>
-			<image class="right-image" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/向右箭头.png"></image>
+			<image class="right-image" src="http://localhost/barbecue/public/libs/img/向右箭头.png"></image>
 		</view>
 	</view>
 

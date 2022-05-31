@@ -1,5 +1,8 @@
 {
 	"usingComponents": {},
 	"navigationBarTitleText": "菜单",
-	"navigationBarBackgroundColor": "#ffbb40"
+	"navigationBarBackgroundColor": "#ffbb40",
+	"enablePullDownRefresh": true,
+	"backgroundColor": "#ffbb40",
+	"backgroundTextStyle": "dark"
 }

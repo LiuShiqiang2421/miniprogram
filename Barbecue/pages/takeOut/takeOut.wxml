@@ -11,7 +11,7 @@
 				<view class="user-info">{{user_info.tel}}</view>
 			</view>
 			<view class="my-address-cells-right">
-				<image class="update" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/修改.png"></image>
+				<image class="update" src="http://localhost/barbecue/public/libs/img/修改.png"></image>
 				<view class="update-status" hover-class="hover-status" bindtap="updateAddress"></view>
 			</view>
 		</view>

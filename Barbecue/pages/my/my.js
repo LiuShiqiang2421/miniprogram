@@ -6,47 +6,45 @@ Page({
 	/**
 	 * 页面的初始数据
 	 */
-	data: {
-		
-	},
+	data: {},
 
-	couponCenter: function(e) {
+	couponCenter: function (e) {
 		if (user_info.tel) {
 			wx.navigateTo({
-			  url: '/pages/couponCenter/couponCenter',
+				url: '/pages/couponCenter/couponCenter',
 			})
 		} else {
 			wx.showToast({
-			  title: '登录或注册账号',
-			  icon: "error",
-			  duration: 2000
+				title: '登录或注册账号',
+				icon: "error",
+				duration: 2000
 			})
 		}
 	},
 
-   myAddress: function() {
+	myAddress: function () {
 		if (user_info.tel) {
 			wx.navigateTo({
-			  url: '/pages/takeOut/takeOut',
+				url: '/pages/takeOut/takeOut',
 			})
 		} else {
 			wx.showToast({
-			  title: '登录或注册账号',
-			  icon: "error",
-			  duration: 2000
+				title: '登录或注册账号',
+				icon: "error",
+				duration: 2000
 			})
 		}
 	},
 
-	register: function() {
+	register: function () {
 		wx.navigateTo({
-		  url: '/pages/register/register',
+			url: '/pages/register/register',
 		})
 	},
 
-	login: function() {
+	login: function () {
 		wx.navigateTo({
-		  url: '/pages/login/login',
+			url: '/pages/login/login',
 		})
 	},
 
@@ -57,7 +55,9 @@ Page({
 		setTimeout(() => {
 			wx.hideLoading();
 			this.setData({
-				user_info: Object.keys(user_info).forEach(key => {user_info[key] = ''}),
+				user_info: Object.keys(user_info).forEach(key => {
+					user_info[key] = ''
+				}),
 			});
 			this.onShow();
 		}, 1500);
@@ -67,7 +67,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-		
+
 	},
 
 	/**

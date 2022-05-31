@@ -11,9 +11,9 @@ Page({
 	},
 
 	couponEvent: function (e) {
-		if (user_info.points >= e.currentTarget.dataset.c_points) {
-			user_info.points = Number(user_info.points) - e.currentTarget.dataset.c_points;
-			user_info.coupon = Number(user_info.coupon) + e.currentTarget.dataset.c_money;
+		if (Number(user_info.points) >= e.currentTarget.dataset.c_points) {
+			user_info.points = (Number(user_info.points) - e.currentTarget.dataset.c_points).toFixed(2);
+			user_info.coupon = (Number(user_info.coupon) + e.currentTarget.dataset.c_money).toFixed(2);
 
 			wx.request({
 				url: apiurl + 'user/updatePoints',
@@ -95,14 +95,14 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload() {
-
+		
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh() {
-
+		this.onShow();
 	},
 
 	/**

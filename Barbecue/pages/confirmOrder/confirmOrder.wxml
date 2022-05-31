@@ -14,7 +14,7 @@
 <view class="selected-address" hidden="{{hiddenAddress}}">
 	<view style=" padding-bottom: 15rpx; display: flex; justify-content: space-between;">
 		<view style="font-size: 38rpx; color: #454545; font-weight: 600;">收货信息</view>
-		<image class="update" src="https://cdn.jsdelivr.net/gh/LiuShiqiang2421/images/Barbecue/修改.png" bindtap="updateAddress"></image>
+		<image class="update" src="http://localhost/barbecue/public/libs/img/修改.png" bindtap="updateAddress"></image>
 	</view>
 	<view style="font-size: 35rpx; padding-bottom: 10rpx;">{{user_info.address + user_info.houseNumber}}</view>
 	<view style="display: flex; padding-bottom: 10rpx;">

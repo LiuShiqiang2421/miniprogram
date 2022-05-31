@@ -134,7 +134,7 @@ Page({
 					setTimeout(() => {
 						wx.hideLoading();
 						if (res.data.status == '成功') {
-							user_info.points = Number(user_info.points) + Number(payPrice * 0.10);
+							user_info.points = (Number(user_info.points) + Number(payPrice * 0.10)).toFixed(2);
 							wx.request({
 								url: apiurl + 'user/updatePoints',
 								data: {
@@ -193,11 +193,9 @@ Page({
 	 */
 	onLoad(options) {
 		var date = new Date();
-
-		var hour = date.getHours();
 		var minute = date.getMinutes();
-
 		date.setMinutes(minute + 30);
+		var hour = date.getHours();
 		var m = date.getMinutes();
 
 		var start_time = this.addZero(hour) + ':' + this.addZero(m);

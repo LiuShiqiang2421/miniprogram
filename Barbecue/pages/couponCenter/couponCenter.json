@@ -1,5 +1,8 @@
 {
 	"usingComponents": {},
 	"navigationBarTitleText": "领券中心",
-	"navigationBarBackgroundColor": "#ffbb40"
+	"navigationBarBackgroundColor": "#ffbb40",
+	"enablePullDownRefresh": true,
+	"backgroundColor": "#ffbb40",
+	"backgroundTextStyle": "dark"
 }
